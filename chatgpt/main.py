@@ -2,6 +2,10 @@ import openai  # pip install openai
 import typer  # pip install "typer[all]"
 from rich import print  # pip install rich
 from rich.table import Table
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 """
 Webs de interés:
@@ -14,7 +18,7 @@ Webs de interés:
 
 def main():
 
-    openai.api_key = "TU_API_KEY creada en https://platform.openai.com"
+    openai.api_key = os.getenv('API_KEY') #TU_API_KEY creada en https://platform.openai.com
 
     print("💬 [bold green]ChatGPT API en Python[/bold green]")
 
