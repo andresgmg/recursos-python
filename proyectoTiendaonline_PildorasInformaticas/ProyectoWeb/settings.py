@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,9 +45,7 @@ INSTALLED_APPS = [
     'blog',
     'contacto',
     'tienda',
-    'carro',
-    
-
+    'carro'
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'carro.context_processor.importe_total_carro',                
+                'carro.context_processor.importe_total_carro',
             ],
         },
     },
@@ -134,9 +135,9 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
 # configuración de email
 
-EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST="smtp.gmail.com"
-EMAIL_USE_TLS=True
-EMAIL_PORT=587
-EMAIL_HOST_USER="juanmds@gmail.com"
-EMAIL_HOST_PASSWORD="diomuzdnunmphzsx"
+EMAIL_BACKEND=os.getenv('EMAIL_BACKEND')
+EMAIL_HOST=os.getenv('EMAIL_HOST')
+EMAIL_USE_TLS=os.getenv('EMAIL_USE_TLS')
+EMAIL_PORT=os.getenv('EMAIL_PORT')
+EMAIL_HOST_USER=os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.getenv('EMAIL_HOST_PASSWORD')
