@@ -3,7 +3,7 @@
 This project show a practice project the Django and Django Rest Framework with some special features
 
 - Use APIView
-- Use JWT 
+- Use JWT
 
 ## Installation
 
@@ -18,4 +18,4 @@ Install the requirements
 pip install -r requirements.txt
 ```
 
-Made with ❤️ by @davidcasr
+Made with ❤️ by Andres DevOps
