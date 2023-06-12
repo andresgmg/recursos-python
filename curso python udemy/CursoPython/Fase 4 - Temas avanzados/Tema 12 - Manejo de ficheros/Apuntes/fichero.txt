@@ -1,4 +1,3 @@
-Una línea con texto
-Otra línea con texto
-Otra línea más con texto
-Cuarta línea del fichero
+Una linea con texto
+Otra linea con texto
+Otra línea más abajo del todo
