@@ -14,6 +14,11 @@ def seleccionar():
 
 	monitor.config(text=cadena)
 
+def reset():
+	leche.set(0)
+	azucar.set(0)
+	monitor.config(text="")
+
 # Configuración de la raíz
 root = Tk()
 root.title("Cafetería")
@@ -35,6 +40,8 @@ Checkbutton(frame, text="Con azúcar", variable=azucar, onvalue=1, offvalue=0, c
 
 monitor = Label(frame)
 monitor.pack()
+
+Button(root, text="Reiniciar", command=reset).pack()
 
 
 # Finalmente bucle de la apliación
