@@ -15,7 +15,7 @@ label2.grid(row=1, column=0, sticky="w", padx=5, pady=5)
 
 entry2 = Entry(root)
 entry2.grid(row=1, column=1, padx=5, pady=5)
-entry2.config(justify="center", show="?")
+entry2.config(justify="center", show="*")
 
 
 # Finalmente bucle de la apliación
