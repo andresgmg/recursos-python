@@ -15,10 +15,9 @@ def abrir():
 	global ruta
 	mensaje.set("Abrir fichero")
 	ruta = FileDialog.askopenfilename(
-		initialdir='.', 
+		initialdir='.',
 		filetype=(("Ficheros de texto", "*.txt"),),
 		title="Abrir un fichero de texto")
-
 	if ruta != "":
 		fichero = open(ruta, 'r')
 		contenido = fichero.read()
@@ -27,17 +26,17 @@ def abrir():
 		fichero.close()
 		root.title(ruta + " - Mi editor")
 
-
 def guardar():
-	mensaje.set("Guardar fichero")
-	if ruta != "":
-		contenido = texto.get(1.0,'end-1c')
-		fichero = open(ruta, 'w+')
-		fichero.write(contenido)
-		fichero.close()
-		mensaje.set("Fichero guardado correctamente")
-	else:
-		guardar_como()
+    global ruta
+    mensaje.set("Guardar fichero")
+    if ruta != "":
+        contenido = texto.get(1.0,'end-1c')
+        fichero = open(ruta, 'w+')
+        fichero.write(contenido)
+        fichero.close()
+        mensaje.set("Fichero guardado correctamente")
+    else:
+        guardar_como()
 
 def guardar_como():
 	global ruta
@@ -54,11 +53,9 @@ def guardar_como():
 		mensaje.set("Guardado cancelado")
 		ruta = ""
 
-
 # Configuración de la raíz
 root = Tk()
 root.title("Mi editor")
-
 
 # Menú superior
 menubar = Menu(root)
@@ -81,7 +78,6 @@ mensaje = StringVar()
 mensaje.set("Bienvenido a tu Editor")
 monitor = Label(root, textvar=mensaje, justify='left')
 monitor.pack(side="left")
-
 
 root.config(menu=menubar)
 # Finalmente bucle de la apliación
