@@ -17,7 +17,7 @@ conexion = sqlite3.connect("restaurante_final.db")
 cursor = conexion.cursor()
 
 # Buscar las categorías y platos de la bd
-categorias = cursor.execute("SELECT * FROM categoria").fetchall()	
+categorias = cursor.execute("SELECT * FROM categoria").fetchall()
 for categoria in categorias:
 	Label(root, text=categoria[1], fg="black", font=("Times New Roman",20,"bold italic")).pack()
 
@@ -26,7 +26,7 @@ for categoria in categorias:
 		Label(root, text=plato[1], fg="gray", font=("Verdana",15,"italic")).pack()
 
 	# Separación entre categorias
-	Label(root, text="").pack()	
+	Label(root, text="").pack()
 
 conexion.close()
 
