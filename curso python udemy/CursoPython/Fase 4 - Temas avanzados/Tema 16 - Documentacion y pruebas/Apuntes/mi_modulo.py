@@ -1,4 +1,4 @@
-"""Este es el docstring del módulo"""
+"""Este es el docstring del módulo principal, editado"""
 
 def despedir():
     """Este es el docstring de la función despedir"""
